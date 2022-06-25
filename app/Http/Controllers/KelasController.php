@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggota;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KelasController extends Controller
 {
@@ -35,7 +37,12 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kelas::create($request->all());
+
+        /**
+         * Return
+         */
+        return back()->with('sucess', 'Kelas has been created');
     }
 
     /**
@@ -69,7 +76,22 @@ class KelasController extends Controller
      */
     public function update(Request $request, Kelas $kelas)
     {
-        //
+        $anggota = Anggota::where('kelas_id', $kelas['id'])
+            ->where('anggota_id', Auth::user()->id)
+            ->where('anggota_role', 'creator')
+            ->first();
+
+        if (is_null($anggota)) {
+            return back()->with('error', 'You dont have access');
+        }
+
+        Kelas::where('id', $kelas['id'])->update($request->all());
+
+        /**
+         * Return
+         */
+
+        return back()->with('success', 'Kelas has been updated');
     }
 
     /**
@@ -80,6 +102,20 @@ class KelasController extends Controller
      */
     public function destroy(Kelas $kelas)
     {
-        //
+        $anggota = Anggota::where('kelas_id', $kelas['id'])
+            ->where('anggota_id', Auth::user()->id)
+            ->where('anggota_role', 'creator')
+            ->first();
+
+        if (is_null($anggota)) {
+            return back()->with('error', 'You dont have access');
+        }
+
+        $kelas = Kelas::where('id', $kelas['id'])->delete();
+
+        /**
+         * Return
+         */
+        return back()->with('success', 'Kelas has been deleted');
     }
 }

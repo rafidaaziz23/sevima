@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kelas_id')->nullable()->index('fk_anggota_kelas');
             $table->foreignId('user_id')->nullable()->index('fk_anggota_user');
+            $table->enum('anggota_role', ['creator', 'member', 'mentor']);
             $table->timestamps();
         });
     }
