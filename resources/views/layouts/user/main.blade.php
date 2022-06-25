@@ -146,10 +146,6 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="menu-text">Dashboard</span>
 												<i class="menu-arrow"></i>
 											</a>
-<<<<<<< HEAD
-=======
-
->>>>>>> bbb2d7683c1e71332ebad861ca82e47c9e847f58
 										</li>
 										<li class="menu-item menu-item-submenu" data-menu-toggle="click" aria-haspopup="true">
 											<a href="javascript:;" class="menu-link menu-toggle">
