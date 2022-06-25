@@ -22,9 +22,17 @@ Route::get('/kelas-forum', function () {
     return view('user.kelas.index');
 });
 
+Route::get('/kelas-list', function () {
+    return view('user.kelas.list');
+});
+
 // Route::get('/user', function () {
 //     return view('admin.user.index');
 // });
+
+Route::get('dashboard', function () {
+    return view('user.dashboard.index');
+});
 
 Route::resource('user', UserController::class);
 
