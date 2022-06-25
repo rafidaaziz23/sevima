@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AutentikasiController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\KomentarPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -14,17 +17,56 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/admin', function () {
-    return view('layouts.admin.main');
+
+/**
+ * Middleware Auth
+ */
+Route::middleware(['auth'])->group(function () {
+    /* Route Resource */
+    Route::resource('user', UserController::class);
+    Route::resource('kelas', KelasController::class);
+    /* Route Method */
+    Route::post('/komentarPost', [KomentarPostController::class, 'store'])->name('komentar.post');
+    /* Route Controller */
+    Route::controller(AutentikasiController::class)->group(function () {
+        Route::post('/logout', 'actLogout');
+    });
+
+    /* Route Function */
+    Route::get('/admin', function () {
+        return view('layouts.admin.main');
+    });
+
+    Route::get('/kelas-list', function () {
+        return view('user.kelas.list');
+    });
+
+    Route::get('/tugas', function () {
+        return view('user.tugas.index');
+    });
+
+    Route::get('/member', function () {
+        return view('user.kelas.anggota');
+    });
+
+    Route::get('/dashboard', function () {
+        return view('user.dashboard.index');
+    });
 });
 
-Route::get('/kelas-forum', function () {
-    return view('user.kelas.index');
+
+/**
+ * Middleware Guest
+ */
+Route::middleware(['guest'])->group(function () {
+    /* Route Function */
+    Route::get('/autentikasi', function () {
+        return view('user.login');
+    })->name('login');
+
+    /* Route Controller */
+    Route::controller(AutentikasiController::class)->group(function() {
+        Route::post('/login', 'actLogin');
+        Route::post('/register', 'actRegister');
+    });
 });
-
-// Route::get('/user', function () {
-//     return view('admin.user.index');
-// });
-
-Route::resource('user', UserController::class);
-

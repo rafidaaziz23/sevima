@@ -846,11 +846,8 @@ License: You must have a valid license purchased only from themeforest(the above
                            <div class="col-md-3">
                               @include('components.user.kelasDetail')
                            </div>
-                           <div class="col-md-5">
+                           <div class="col-md-9">
                               @yield('content')
-                           </div>
-                           <div class="col-md-4">
-                              @include('components.user.tugasList')
                            </div>
                         </div>
 
