@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Anggota;
 use App\Models\Kelas;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,9 @@ class KelasController extends Controller
      */
     public function index()
     {
-        //
+        // $post = Post::with('Postby')->with('Postkomen')->latest()->get();
+
+        return view('user.kelas.index');
     }
 
     /**

@@ -14,15 +14,8 @@ License: You must have a valid license purchased only from themeforest(the above
 -->
 <html lang="en">
 
-
-
 	<!--begin::Head-->
 	<head>
-        <style>
-            .displayHidden {
-                display: none
-            }
-        </style>
 		<base href="">
 		<meta charset="utf-8" />
 		<title>Metronic Live preview | Keenthemes</title>
@@ -146,16 +139,65 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="menu-text">Dashboard</span>
 												<i class="menu-arrow"></i>
 											</a>
-<<<<<<< HEAD
-=======
-
->>>>>>> bbb2d7683c1e71332ebad861ca82e47c9e847f58
 										</li>
 										<li class="menu-item menu-item-submenu" data-menu-toggle="click" aria-haspopup="true">
 											<a href="javascript:;" class="menu-link menu-toggle">
 												<span class="menu-text">Kelas</span>
 												<i class="menu-arrow"></i>
 											</a>
+											<div class="menu-submenu menu-submenu ml-10" style="width:200px">
+												<div class="menu-subnav">
+													<ul class="menu-content">
+														<li class="menu-item">
+															<h3 class="menu-heading menu-toggle">
+																<i class="menu-bullet menu-bullet-dot">
+																	<span></span>
+																</i>
+																<span class="menu-text">Task Reports</span>
+																<i class="menu-arrow"></i>
+															</h3>
+															<ul class="menu-inner">
+																<li class="menu-item" aria-haspopup="true">
+																	<a href="javascript:;" class="menu-link">
+																		<span class="svg-icon menu-icon">
+
+																			<!--begin::Svg Icon | path:assets/media/svg/icons/Clothes/Briefcase.svg-->
+																			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																					<rect x="0" y="0" width="24" height="24" />
+																					<path d="M5.84026576,8 L18.1597342,8 C19.1999115,8 20.0664437,8.79732479 20.1528258,9.83390904 L20.8194924,17.833909 C20.9112219,18.9346631 20.0932459,19.901362 18.9924919,19.9930915 C18.9372479,19.9976952 18.8818364,20 18.8264009,20 L5.1735991,20 C4.0690296,20 3.1735991,19.1045695 3.1735991,18 C3.1735991,17.9445645 3.17590391,17.889153 3.18050758,17.833909 L3.84717425,9.83390904 C3.93355627,8.79732479 4.80008849,8 5.84026576,8 Z M10.5,10 C10.2238576,10 10,10.2238576 10,10.5 L10,11.5 C10,11.7761424 10.2238576,12 10.5,12 L13.5,12 C13.7761424,12 14,11.7761424 14,11.5 L14,10.5 C14,10.2238576 13.7761424,10 13.5,10 L10.5,10 Z" fill="#000000" />
+																					<path d="M10,8 L8,8 L8,7 C8,5.34314575 9.34314575,4 11,4 L13,4 C14.6568542,4 16,5.34314575 16,7 L16,8 L14,8 L14,7 C14,6.44771525 13.5522847,6 13,6 L11,6 C10.4477153,6 10,6.44771525 10,7 L10,8 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+																				</g>
+																			</svg>
+
+																			<!--end::Svg Icon-->
+																		</span>
+																		<span class="menu-text">Latest Tasks</span>
+																	</a>
+																</li>
+																<li class="menu-item" aria-haspopup="true">
+																	<a href="javascript:;" class="menu-link">
+																		<span class="svg-icon menu-icon">
+
+																			<!--begin::Svg Icon | path:assets/media/svg/icons/Clothes/Crown.svg-->
+																			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																					<polygon points="0 0 24 0 24 24 0 24" />
+																					<path d="M11.2600599,5.81393408 L2,16 L22,16 L12.7399401,5.81393408 C12.3684331,5.40527646 11.7359848,5.37515988 11.3273272,5.7466668 C11.3038503,5.7680094 11.2814025,5.79045722 11.2600599,5.81393408 Z" fill="#000000" opacity="0.3" />
+																					<path d="M12.0056789,15.7116802 L20.2805786,6.85290308 C20.6575758,6.44930487 21.2903735,6.42774054 21.6939717,6.8047378 C21.8964274,6.9938498 22.0113578,7.25847607 22.0113578,7.535517 L22.0113578,20 L16.0113578,20 L2,20 L2,7.535517 C2,7.25847607 2.11493033,6.9938498 2.31738608,6.8047378 C2.72098429,6.42774054 3.35378194,6.44930487 3.7307792,6.85290308 L12.0056789,15.7116802 Z" fill="#000000" />
+																				</g>
+																			</svg>
+
+																			<!--end::Svg Icon-->
+																		</span>
+																		<span class="menu-text">Pending Tasks</span>
+																	</a>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</div>
+											</div>
 										</li>
 										<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
 											<a href="javascript:;" class="menu-link menu-toggle">
@@ -787,7 +829,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">NamaKelas</h5>
+										<h5 class="text-dark font-weight-bold my-1 mr-5">Dashboard</h5>
 
 										<!--end::Page Title-->
 									</div>
@@ -799,38 +841,88 @@ License: You must have a valid license purchased only from themeforest(the above
 
 								<!--begin::Toolbar-->
 								<div class="d-flex align-items-center">
-									<div class="dropdown dropdown-inline mr-2">
-										<button type="button" class="btn btn-light-info font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<span class="svg-icon svg-icon-md">
-												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/PenAndRuller.svg-->
+
+									<!--begin::Actions-->
+									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
+
+									<!--end::Actions-->
+
+									<!--begin::Dropdown-->
+									<div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
+										<a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="svg-icon svg-icon-success svg-icon-2x">
+
+												<!--begin::Svg Icon | path:assets/media/svg/icons/Files/File-plus.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-														<rect x="0" y="0" width="24" height="24" />
-														<path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3" />
-														<path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000" />
+														<polygon points="0 0 24 0 24 24 0 24" />
+														<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+														<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
 													</g>
 												</svg>
+
 												<!--end::Svg Icon-->
-											</span>Unggah</button>
-										<!--begin::Dropdown Menu-->
-										<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+											</span>
+										</a>
+										<div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 m-0">
+
+											<!--[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-1","page":"index"}]/-->
+
 											<!--begin::Navigation-->
-											<ul class="navi flex-column navi-hover py-2">
+											<ul class="navi navi-hover">
+												<li class="navi-header font-weight-bold py-4">
+													<span class="font-size-lg">Choose Label:</span>
+													<i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
+												</li>
+												<li class="navi-separator mb-3 opacity-70"></li>
 												<li class="navi-item">
 													<a href="#" class="navi-link">
-														<span class="navi-text">Post</span>
+														<span class="navi-text">
+															<span class="label label-xl label-inline label-light-success">Customer</span>
+														</span>
 													</a>
 												</li>
 												<li class="navi-item">
 													<a href="#" class="navi-link">
-														<span class="navi-text">Tugas</span>
+														<span class="navi-text">
+															<span class="label label-xl label-inline label-light-danger">Partner</span>
+														</span>
 													</a>
+												</li>
+												<li class="navi-item">
+													<a href="#" class="navi-link">
+														<span class="navi-text">
+															<span class="label label-xl label-inline label-light-warning">Suplier</span>
+														</span>
+													</a>
+												</li>
+												<li class="navi-item">
+													<a href="#" class="navi-link">
+														<span class="navi-text">
+															<span class="label label-xl label-inline label-light-primary">Member</span>
+														</span>
+													</a>
+												</li>
+												<li class="navi-item">
+													<a href="#" class="navi-link">
+														<span class="navi-text">
+															<span class="label label-xl label-inline label-light-dark">Staff</span>
+														</span>
+													</a>
+												</li>
+												<li class="navi-separator mt-3 opacity-70"></li>
+												<li class="navi-footer py-4">
+													<a class="btn btn-clean font-weight-bold btn-sm" href="#">
+														<i class="ki ki-plus icon-sm"></i>Add new</a>
 												</li>
 											</ul>
+
 											<!--end::Navigation-->
+
+											<!--[html-partial:end:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-1","page":"index"}]/-->
 										</div>
-										<!--end::Dropdown Menu-->
 									</div>
+
 									<!--end::Dropdown-->
 								</div>
 
@@ -844,18 +936,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							<!--begin::Container-->
 							<div class="container">
-                        <div class="row">
-                           <div class="col-md-3">
-                              @include('components.user.kelasDetail')
-                           </div>
-                           <div class="col-md-5">
-                              @yield('content')
-                           </div>
-                           <div class="col-md-4">
-                              @include('components.user.tugasList')
-                           </div>
-                        </div>
-
+								<div class="row">
+									@yield('content')
+								</div>
                      </div>
 
 							<!--end::Container-->
@@ -1322,8 +1405,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="assets/js/pages/widgets.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        @yield('script')
+
 		<!--end::Page Scripts-->
 	</body>
 
