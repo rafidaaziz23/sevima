@@ -29,6 +29,10 @@ Route::get('/kelas-list', function () {
     return view('user.kelas.list');
 });
 
+Route::get('/kelas-list', function () {
+    return view('user.kelas.list');
+});
+
 // Route::get('/user', function () {
 //     return view('admin.user.index');
 // });
