@@ -13,4 +13,14 @@ class Post extends Model
     {
         return $this->hasOne(Kelas::class, 'kelas_id', 'id');
     }
+
+    public function Postby()
+    {
+        return $this->hasOne(User::class, 'id', 'post_by');
+    }
+
+    public function Postkomen()
+    {
+        return $this->hasMany(CommentPost::class, 'post_id', 'id');
+    }
 }
