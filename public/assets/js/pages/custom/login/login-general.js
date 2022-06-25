@@ -25,10 +25,13 @@ var KTLogin = function() {
 			KTUtil.getById('kt_login_signin_form'),
 			{
 				fields: {
-					username: {
-						validators: {
+					email: {
+                        validators: {
 							notEmpty: {
-								message: 'Username is required'
+								message: 'Email address is required'
+							},
+                            emailAddress: {
+								message: 'The value is not a valid email address'
 							}
 						}
 					},
@@ -158,7 +161,7 @@ var KTLogin = function() {
 
         $('#kt_login_signup_submit').on('click', function (e) {
             e.preventDefault();
-
+            var form = $(this).parents('form');
             validation.validate().then(function(status) {
 		        if (status == 'Valid') {
                     swal.fire({
@@ -169,8 +172,9 @@ var KTLogin = function() {
                         customClass: {
     						confirmButton: "btn font-weight-bold btn-light-primary"
     					}
-		            }).then(function() {
+		            }).then(function(isConfirm) {
 						KTUtil.scrollTop();
+                        if (isConfirm) form.submit();
 					});
 				} else {
 					swal.fire({
