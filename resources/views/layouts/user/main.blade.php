@@ -37,25 +37,25 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts-->
 
 		<!--begin::Page Vendors Styles(used by this page)-->
-		<link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/plugins/custom/fullcalendar/fullcalendar.bundle.css")}}" rel="stylesheet" type="text/css" />
 
 		<!--end::Page Vendors Styles-->
 
 		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/plugins/global/plugins.bundle.css")}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/plugins/custom/prismjs/prismjs.bundle.css")}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/css/style.bundle.css")}}" rel="stylesheet" type="text/css" />
 
 		<!--end::Global Theme Styles-->
 
 		<!--begin::Layout Themes(used by all pages)-->
-		<link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/brand/light.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/themes/layout/aside/light.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/css/themes/layout/header/base/light.css")}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/css/themes/layout/header/menu/light.css")}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/css/themes/layout/brand/light.css")}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/css/themes/layout/aside/light.css")}}" rel="stylesheet" type="text/css" />
 
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="{{ asset("assets/media/logos/favicon.ico") }}" />
 	</head>
 
 	<!--end::Head-->
@@ -70,8 +70,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 
 			<!--begin::Logo-->
-			<a href="index.html">
-				<img alt="Logo" src="assets/media/logos/logo-dark.png" />
+			<a href="/">
+				<img alt="Logo" src="{{ asset("assets/media/logos/logo-dark.png") }}" />
 			</a>
 
 			<!--end::Logo-->
@@ -130,8 +130,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
 								<!--begin::Header Logo-->
 								<div class="header-logo">
-									<a href="index.html">
-										<img alt="Logo" src="assets/media/logos/logo-dark.png" />
+									<a href="/">
+										<img alt="Logo" src="{{ asset("assets/media/logos/logo-dark.png") }}" />
 									</a>
 								</div>
 
@@ -752,9 +752,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ ucfirst(Auth::user()->nama) }}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											<span class="symbol-label font-size-h5 font-weight-bold">{{ mb_substr(Auth::user()->nama, 0, 1) }}</span>
 										</span>
 									</div>
 								</div>
@@ -925,12 +925,12 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
+						<div class="symbol-label" style={{ Auth::user()->user_photo ? "background-image:url(Auth::user()->user_photo)" : "background-image:url('assets/media/users/300_21.jpg')" }}></div>
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">James Jones</a>
-						<div class="text-muted mt-1">Application Developer</div>
+						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::user()->nama }}</a>
+						<div class="text-muted mt-1">{{ ucfirst(Auth::user()->role) }}</div>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -949,7 +949,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Svg Icon-->
 										</span>
 									</span>
-									<span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+									<span class="navi-text text-muted text-hover-primary">{{ Auth::user()->email }}</span>
 								</span>
 							</a>
 							<a onclick="logout()" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
@@ -1306,20 +1306,20 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Config-->
 
 		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="{{ asset("assets/plugins/global/plugins.bundle.js")}}"></script>
+		<script src="{{ asset("assets/plugins/custom/prismjs/prismjs.bundle.js")}}"></script>
+		<script src="{{ asset("assets/js/scripts.bundle.js")}}"></script>
 		<script src="https://keenthemes.com/metronic/assets/js/engage_code.js"></script>
 
 		<!--end::Global Theme Bundle-->
 
 		<!--begin::Page Vendors(used by this page)-->
-		<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="{{ asset("assets/plugins/custom/fullcalendar/fullcalendar.bundle.js") }}"></script>
 
 		<!--end::Page Vendors-->
 
 		<!--begin::Page Scripts(used by this page)-->
-		<script src="assets/js/pages/widgets.js"></script>
+		<script src="{{ asset("assets/js/pages/widgets.js") }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{{ asset('assets/js/global.js') }}"></script>
         @yield('script')

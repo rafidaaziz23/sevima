@@ -5,6 +5,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\KomentarPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,14 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function() {
+    if (Auth::check()) {
+        return redirect('/dashboard');
+    }
+
+    return redirect('/login');
+});
 
 
 /**
@@ -37,9 +46,9 @@ Route::middleware(['auth'])->group(function () {
         return view('layouts.admin.main');
     });
 
-    Route::get('/kelas-list', function () {
-        return view('user.kelas.list');
-    });
+    // Route::get('/kelas-list', function () {
+    //     return view('user.kelas.list');
+    // });
 
     Route::get('/tugas', function () {
         return view('user.tugas.index');

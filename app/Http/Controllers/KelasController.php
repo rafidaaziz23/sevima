@@ -7,6 +7,7 @@ use App\Models\Kelas;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class KelasController extends Controller
 {
@@ -17,9 +18,8 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $post = Post::with('Postby')->with('Postkomen')->latest()->get();
 
-        return view('user.kelas.index', compact('post'));
+        return view('user.kelas.list');
     }
 
     /**
@@ -40,6 +40,8 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
+        $kelasKode = Str::random(6);
+        $request['kelas_kode'] = $kelasKode;
         Kelas::create($request->all());
 
         /**
@@ -56,7 +58,8 @@ class KelasController extends Controller
      */
     public function show(Kelas $kelas)
     {
-        //
+        $post = Post::with('Postby')->with('Postkomen')->latest()->get();
+        return view('user.kelas.index', compact('post'));
     }
 
     /**

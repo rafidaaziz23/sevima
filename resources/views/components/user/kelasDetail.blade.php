@@ -8,7 +8,7 @@
             <!--begin::Header-->
             <div class="d-flex flex-column flex-center">
                <!--begin::Image-->
-               <div class="bgi-no-repeat bgi-size-cover rounded min-h-180px w-100" style="background-image: url(assets/media/stock-600x400/img-70.jpg)"></div>
+               <div class="bgi-no-repeat bgi-size-cover rounded min-h-180px w-100" style="background-image: url({{ asset("assets/media/stock-600x400/img-70.jpg") }})"></div>
                <!--end::Image-->
                <!--begin::Title-->
                <a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1">PBO RPL-B</a>

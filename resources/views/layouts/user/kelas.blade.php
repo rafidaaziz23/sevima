@@ -63,7 +63,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 
 			<!--begin::Logo-->
-			<a href="index.html">
+			<a href="/">
 				<img alt="Logo" src="assets/media/logos/logo-dark.png" />
 			</a>
 
@@ -123,7 +123,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 								<!--begin::Header Logo-->
 								<div class="header-logo">
-									<a href="index.html">
+									<a href="/">
 										<img alt="Logo" src="assets/media/logos/logo-dark.png" />
 									</a>
 								</div>
@@ -797,9 +797,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ ucfirst(Auth::user()->nama) }}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											<span class="symbol-label font-size-h5 font-weight-bold">{{ mb_substr(Auth::user()->nama, 0, 1) }}</span>
 										</span>
 									</div>
 								</div>
@@ -1006,17 +1006,17 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!--end::Header-->
 
 			<!--begin::Content-->
-			<div class="offcanvas-content pr-5 mr-n5">
+            <div class="offcanvas-content pr-5 mr-n5">
 
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
+						<div class="symbol-label" style={{ Auth::user()->user_photo ? "background-image:url(Auth::user()->user_photo)" : "background-image:url('assets/media/users/300_21.jpg')" }}></div>
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">James Jones</a>
-						<div class="text-muted mt-1">Application Developer</div>
+						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::user()->nama }}</a>
+						<div class="text-muted mt-1">{{ ucfirst(Auth::user()->role) }}</div>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -1035,7 +1035,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Svg Icon-->
 										</span>
 									</span>
-									<span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+									<span class="navi-text text-muted text-hover-primary">{{ Auth::user()->email }}</span>
 								</span>
 							</a>
 							<a onclick="logout()" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
@@ -1298,6 +1298,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 				<!--end::Notifications-->
 			</div>
+
 
 			<!--end::Content-->
 		</div>
