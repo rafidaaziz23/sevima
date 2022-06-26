@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModulesFile;
+use App\Models\ModulesLink;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TugasController extends Controller
 {
@@ -14,7 +17,10 @@ class TugasController extends Controller
      */
     public function index()
     {
-        //
+        $tugas = Tugas::latest()->get();
+
+        return view('user.tugas.index', compact('tugas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +30,14 @@ class TugasController extends Controller
      */
     public function create()
     {
-        //
+        $file = new ModulesFile;
+        $link = new ModulesLink;
+        $tugas = new Tugas;
+        return view('user.tugas.createTugas',compact(
+            'file',
+            'link',
+            'tugas',
+        ));
     }
 
     /**
@@ -35,7 +48,36 @@ class TugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tugas = Tugas::create([
+            'tugas_judul' => $request['tugas_judul'],
+            'tugas_desc' => $request['tugas_desc'],
+            'tugas_due' => $request['tugas_due'],
+            'create_by' => Auth::user()->id,
+            'update_by' => Auth::user()->id,
+        ]);
+        
+        $links = count($request['link']);
+        // foreach($request->file('file') as $file){
+        //     $file_name = $file->hashName();
+        //     $file_path = storage_path('app/public/uploads/products');
+        //     $file->move($file_path, $file_name);
+
+            
+        //     ModulesFile::create([
+        //         'produk_id'     => $tugas['id'],
+        //         'thumb'         => $file_name,
+        //     ]);
+        // }
+        
+        for($j = 0; $j < $links ; $j++){
+            ModulesLink::create([
+                'tugas_id' => $tugas['id'],
+                'link' => $request['link'][$j],
+            ]);
+        }
+
+        return redirect()->route('tugas.index')
+            ->with('success', 'Karir Created successfully');
     }
 
     /**

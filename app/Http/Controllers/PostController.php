@@ -23,9 +23,21 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($kelas)
     {
-        //
+        $post = new Post;
+        return view('user.kelas.postCreate',compact(
+            'post',
+            'kelas'
+        ));
+    }
+
+    public function createPost($kelas){
+        $post = new Post;
+        return view('user.kelas.postCreate',compact(
+            'post',
+            'kelas'
+        ));
     }
 
     /**
@@ -36,9 +48,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request['post_by'] = Auth::user()->id;
         Post::create($request->all());
 
-        return back()->with('success', 'Post has been created');
+        return redirect()->route('kelas.show',$request['kelas_id']);
     }
 
     /**
@@ -94,7 +108,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $cekPostByAnggota = Post::where('id', $post['id'])
-            ->where('post_create_by');
+            ->where('post_create_by', Auth::user()->id);
 
         if (is_null($cekPostByAnggota->first())) {
             return back()->with('error', 'You can delete your post');

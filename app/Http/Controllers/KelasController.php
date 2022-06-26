@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use App\Models\CommentPost;
 use App\Models\Kelas;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -18,8 +19,8 @@ class KelasController extends Controller
      */
     public function index()
     {
-
-        return view('user.kelas.list');
+        $kelas = Kelas::latest()->get();
+        return view('user.kelas.list',compact('kelas'));
     }
 
     /**
@@ -29,7 +30,8 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        $kelas = new Kelas;
+        return view('user.kelas.kelasCreate', compact('kelas'));
     }
 
     /**
@@ -42,12 +44,13 @@ class KelasController extends Controller
     {
         $kelasKode = Str::random(6);
         $request['kelas_kode'] = $kelasKode;
+        $request['kelas_by']= Auth::user()->id;
         Kelas::create($request->all());
 
         /**
          * Return
          */
-        return back()->with('sucess', 'Kelas has been created');
+        return redirect()->route('kelas.index');
     }
 
     /**
@@ -56,10 +59,13 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelas $kelas)
+    public function show($kelas)
     {
-        $post = Post::with('Postby')->with('Postkomen')->latest()->get();
-        return view('user.kelas.index', compact('post'));
+        // $post = Kelas::where('id', $kelas['id'])->with('Posts','Posts.Postby','Posts.Postkomen')->latest()->get();
+        $post = Post::where('kelas_id', $kelas)->with('Postby','Postkomen','Postkomen.users')->latest()->get();
+        $class = Kelas::where('id',$kelas)->first();
+
+        return view('user.kelas.index', compact('post','kelas','class'));
     }
 
     /**

@@ -9,4 +9,8 @@ class CommentPost extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function users(){
+        return $this->hasOne(User::class, 'id', 'comment_by');
+    }
 }

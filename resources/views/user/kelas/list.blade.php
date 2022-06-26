@@ -1,9 +1,12 @@
 @extends('layouts.user.kelas')
 
 @section('content')
-{{-- foreach element semua ini --}}
 
-      <div class="col-md-4">
+@foreach ($kelas as $key => $value)
+    
+
+
+<div class="col-md-4">
          <div class="card card-custom gutter-b">
    <!--begin::Body-->
    <div class="card-body">
@@ -17,10 +20,10 @@
                <div class="bgi-no-repeat bgi-size-cover rounded min-h-180px w-100" style="background-image: url(assets/media/stock-600x400/img-70.jpg)"></div>
                <!--end::Image-->
                <!--begin::Title-->
-               <a href="#" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1">PBO RPL-B</a>
+               <a href="{{ route('kelas.show',$value['id']) }}" class="card-title font-weight-bolder text-dark-75 text-hover-primary font-size-h4 m-0 pt-7 pb-1">{{ $value['kelas_nama'] }}</a>
                <!--end::Title-->
                <!--begin::Text-->
-               <div class="font-weight-bold text-dark-50 font-size-sm pb-7">kode room #404040</div>
+               <div class="font-weight-bold text-dark-50 font-size-sm pb-7">{{ $value['kelas_kode'] }}</div>
                <!--end::Text-->
             </div>
             <!--end::Header-->
@@ -158,6 +161,8 @@
    </div>
    <!--end::Body-->
 </div>
-      </div>
+</div>
+
+@endforeach
 
 @endsection

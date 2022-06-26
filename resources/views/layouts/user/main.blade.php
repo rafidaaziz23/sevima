@@ -63,6 +63,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Body-->
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed page-loading">
 
+		
+
 		<!--begin::Main-->
 
 
@@ -814,13 +816,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
 											<!--begin::Navigation-->
 											<ul class="navi flex-column navi-hover py-2">
+												@yield('post')
 												<li class="navi-item">
-													<a href="#" class="navi-link">
-														<span class="navi-text">Post</span>
-													</a>
-												</li>
-												<li class="navi-item">
-													<a href="#" class="navi-link">
+													<a href="{{ route('tugas.create') }}"  class="navi-link" >
 														<span class="navi-text">Tugas</span>
 													</a>
 												</li>
@@ -839,12 +837,11 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!--end::Subheader-->
 <!--begin::Entry-->
 						<div class="d-flex flex-column-fluid">
-
 							<!--begin::Container-->
 							<div class="container">
                         <div class="row">
                            <div class="col-md-3">
-                              @include('components.user.kelasDetail')
+                              @yield('kelas_detail')
                            </div>
                            <div class="col-md-5">
                               @yield('content')
@@ -1302,6 +1299,9 @@ License: You must have a valid license purchased only from themeforest(the above
 				"font-family": "Poppins"
 			};
 		</script>
+
+		
+		
 
 		<!--end::Global Config-->
 

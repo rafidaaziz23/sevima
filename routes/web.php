@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\AutentikasiController;
-use App\Http\Controllers\KelasController;
-use App\Http\Controllers\KomentarPostController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\TugasController;
+use App\Http\Controllers\AutentikasiController;
+use App\Http\Controllers\KomentarPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
     /* Route Resource */
     Route::resource('user', UserController::class);
     Route::resource('kelas', KelasController::class);
+    Route::resource('tugas', TugasController::class);
+    Route::resource('post', PostController::class);
+    Route::get('/createPost/{id}', [PostController::class, 'createPost'])->name('createPost');
     /* Route Method */
     Route::post('/komentarPost', [KomentarPostController::class, 'store'])->name('komentar.post');
     /* Route Controller */
@@ -45,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', function () {
         return view('layouts.admin.main');
     });
+
 
     // Route::get('/kelas-list', function () {
     //     return view('user.kelas.list');
