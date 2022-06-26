@@ -72,8 +72,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 
 			<!--begin::Logo-->
-			<a href="/">
-				<img alt="Logo" src="{{ asset("assets/media/logos/logo-dark.png") }}" />
+			<a href="/dashboard">
+				SIBAR
 			</a>
 
 			<!--end::Logo-->
@@ -133,7 +133,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Header Logo-->
 								<div class="header-logo">
 									<a href="/">
-										<img alt="Logo" src="{{ asset("assets/media/logos/logo-dark.png") }}" />
+										
 									</a>
 								</div>
 
@@ -145,24 +145,24 @@ License: You must have a valid license purchased only from themeforest(the above
 									<!--begin::Header Nav-->
 									<ul class="menu-nav">
 										<li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active" data-menu-toggle="click" aria-haspopup="true">
-											<a href="javascript:;" class="menu-link menu-toggle">
+											<a href="dashboard" class="menu-link menu-toggle">
 												<span class="menu-text">Dashboard</span>
 												<i class="menu-arrow"></i>
 											</a>
 
 										</li>
 										<li class="menu-item menu-item-submenu" data-menu-toggle="click" aria-haspopup="true">
-											<a href="javascript:;" class="menu-link menu-toggle">
+											<a href="/kelas" class="menu-link menu-toggle">
 												<span class="menu-text">Kelas</span>
 												<i class="menu-arrow"></i>
 											</a>
 										</li>
-										<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-											<a href="javascript:;" class="menu-link menu-toggle">
+										{{-- <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
+											<a href="kelas" class="menu-link menu-toggle">
 												<span class="menu-text">Diskusi</span>
 												<i class="menu-arrow"></i>
 											</a>
-										</li>
+										</li> --}}
 									</ul>
 
 									<!--end::Header Nav-->

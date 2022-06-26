@@ -64,7 +64,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
 			<!--begin::Logo-->
 			<a href="/">
-				<img alt="Logo" src="assets/media/logos/logo-dark.png" />
+				SIBAR
+				{{-- <img alt="Logo" src="assets/media/logos/logo-dark.png" /> --}}
 			</a>
 
 			<!--end::Logo-->
@@ -124,7 +125,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Header Logo-->
 								<div class="header-logo">
 									<a href="/">
-										<img alt="Logo" src="assets/media/logos/logo-dark.png" />
+								
 									</a>
 								</div>
 
